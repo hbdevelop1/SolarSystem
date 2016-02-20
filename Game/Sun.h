@@ -29,7 +29,7 @@ public:
 	virtual ~Sun();
 
 
-	void Draw();
+	void DrawSpecifics();
 
 };
 

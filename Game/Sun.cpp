@@ -34,38 +34,37 @@ Sun::~Sun()
 
 
 
-void Sun::Draw()
+
+/*
+void Scene::SetLight(HVector pos)
 {
+	m_light = new stLight;
 
-  UpdateMatrix();
+	m_light->pos = pos;
 
-  glPushMatrix(); //i will alter the toppest matrix. so save it first. to be able to dispaly non children object.
+	m_light->ambient[0] = 0;
+	m_light->ambient[1] = 0;
+	m_light->ambient[2] = 0;
+	m_light->ambient[3] = 1;
 
-  /*
-  //set position in the global matrix
-  position is always in a vector;
-  multiply the global matrix with vector;
-
-  //push matrix
-
-
-  //set rotation in the global matrix
-  //draw object
-  //pop matrix
-  //draw children
-  //pop matrix
+	m_light->diffuse[0] = 1;
+	m_light->diffuse[1] = 1;
+	m_light->diffuse[2] = 1;
+	m_light->diffuse[3] = 1;
+}
 */
-	glMultMatrixd(m_posmat.GetElements());
 
+void Sun::DrawSpecifics()
+{
 
 //	if(m_light) //the sun
 	{
 		GLfloat pos[] = { 0, 0, 0, 1/*positional*/ };
-		GLfloat ambient[] = { 0, 0, 0, 1.0 };
+		GLfloat ambient[] = { 1, 1, 1, 1.0 };
 		GLfloat diffuse[] = { 1, 1, 1, 1.0 };
 		GLfloat specul[] = { 0, 0, 0, 1.0 };
 
-		GLfloat model_ambient[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+		GLfloat model_ambient[] = { .5f, 0.5f, 0.5f, 1.0f };
 		
 		glLightfv(GL_LIGHT1, GL_POSITION,pos);//todo:use the position of the current obj (this)
 		glLightfv(GL_LIGHT1, GL_AMBIENT, ambient);
@@ -83,11 +82,6 @@ void Sun::Draw()
 		HRendererState::GetInstance().SetLight(true);
 
 	}
-
-	glPushMatrix(); //save the position for children
-
-	glMultMatrixd(m_rotmat.GetElements());
-
 
 	if(m_texture.present)
 	{
@@ -130,34 +124,4 @@ void Sun::Draw()
 		glDisable(GL_TEXTURE_2D);							
 	}
 
-
-
-	glPopMatrix(); //to start drawing children
-
-	std::for_each(m_children.begin(), m_children.end(), boost::mem_fn(&HObject::Draw));
-	//std::mem_fun can only be used with non void returning member functions. so must use boost::mem_fn
-
-
-	glPopMatrix();
-
-
 }
-
-/*
-void Scene::SetLight(HVector pos)
-{
-	m_light = new stLight;
-
-	m_light->pos = pos;
-
-	m_light->ambient[0] = 0;
-	m_light->ambient[1] = 0;
-	m_light->ambient[2] = 0;
-	m_light->ambient[3] = 1;
-
-	m_light->diffuse[0] = 1;
-	m_light->diffuse[1] = 1;
-	m_light->diffuse[2] = 1;
-	m_light->diffuse[3] = 1;
-}
-*/

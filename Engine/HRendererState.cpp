@@ -60,8 +60,7 @@ void HRendererState::Draw()
 }
 
 void HRendererState::SetLight(int l)
-{glDisable(GL_LIGHTING);
-	return;
+{
 	if(l)
 	{
 		glEnable(GL_LIGHTING);

@@ -54,7 +54,7 @@ protected:
 
 public:
 	void Tick();
-	void Draw();
+	void DrawSpecifics();
 	HGraphicObj(const char * filename);
 	virtual ~HGraphicObj();
 

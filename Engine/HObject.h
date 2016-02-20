@@ -35,7 +35,8 @@ public:
 
 	virtual void Init() {}
 	virtual void Tick() {}
-	virtual void Draw() {}
+	void Draw();
+	virtual void DrawSpecifics() {}
 	virtual void UnInit() {}
 	void SetPosition(const HVector & pos);
 

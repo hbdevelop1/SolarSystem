@@ -117,6 +117,71 @@ HGraphicObj::~HGraphicObj()
 	delete m_anim;
 }
 
+/*
+void HGraphicObj::Draw()
+{
+	UpdateMatrix();
+
+	glPushMatrix(); //i will alter the toppest matrix. so save it first. to be able to dispaly non children object.
+
+	glMultMatrixd(m_posmat.GetElements());
+
+	glPushMatrix(); //save the position for children to draw relative to it.
+
+	glMultMatrixd(m_rotmat.GetElements());
+
+	DrawSpecifics();
+
+
+
+	glPopMatrix(); //get the position saved previously, and erase rotation by the same occasion, before starting drawing children
+
+	std::for_each(m_children.begin(), m_children.end(), boost::mem_fn(&HObject::Draw));
+	//std::mem_fun can only be used with non void returning member functions. so must use boost::mem_fn
+
+
+	glPopMatrix();
+}
+*/
+
+/*
+Load animation function.
+called at the creation time of the object
+*/
+void HGraphicObj::LoadAnimation(const char *filename)
+{
+	An8File an8File;
+
+	std::string s=DataPath;
+	s+="\\";
+	s+=filename;
+
+	if( an8File.LoadFile(s) == false)
+	{
+		//assert(false);
+	  return;
+	}
+
+	An8Scene &sc = *an8File.vScenes.begin();
+	An8ObjectElement &oe = *sc.vObjectElements.begin();
+
+	m_anim = new HAnimation(this, oe);
+}
+
+/*
+HGraphicObj::Tick function to update the animation of the object each frame.
+called from Scene::Tick
+*/
+void HGraphicObj::Tick()
+{
+
+  if(!m_anim)
+	return;
+
+  m_anim->Update();
+
+}
+
 
 /*
 HGraphicObj::Draw
@@ -133,19 +198,8 @@ care is taken also to not pass orientation information.
 7-pop matrix
 
 */
-void HGraphicObj::Draw()
+void HGraphicObj::DrawSpecifics()
 {
-	UpdateMatrix();
-
-	glPushMatrix(); //i will alter the toppest matrix. so save it first. to be able to dispaly non children object.
-
-	glMultMatrixd(m_posmat.GetElements());
-
-	glPushMatrix(); //save the position for children to draw relative to it.
-
-	glMultMatrixd(m_rotmat.GetElements());
-
-
 	if(m_texture.present)
 	{
 		glEnable(GL_TEXTURE_2D);							
@@ -192,52 +246,4 @@ void HGraphicObj::Draw()
 	}
 
 
-
-	glPopMatrix(); //get the position saved previously, and erase rotation by the same occasion, before starting drawing children
-
-	std::for_each(m_children.begin(), m_children.end(), boost::mem_fn(&HObject::Draw));
-	//std::mem_fun can only be used with non void returning member functions. so must use boost::mem_fn
-
-
-	glPopMatrix();
 }
-
-
-/*
-Load animation function.
-called at the creation time of the object
-*/
-void HGraphicObj::LoadAnimation(const char *filename)
-{
-	An8File an8File;
-
-	std::string s=DataPath;
-	s+="\\";
-	s+=filename;
-
-	if( an8File.LoadFile(s) == false)
-	{
-		//assert(false);
-	  return;
-	}
-
-	An8Scene &sc = *an8File.vScenes.begin();
-	An8ObjectElement &oe = *sc.vObjectElements.begin();
-
-	m_anim = new HAnimation(this, oe);
-}
-
-/*
-HGraphicObj::Tick function to update the animation of the object each frame.
-called from Scene::Tick
-*/
-void HGraphicObj::Tick()
-{
-
-  if(!m_anim)
-	return;
-
-  m_anim->Update();
-
-}
-
