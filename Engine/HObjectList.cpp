@@ -1,0 +1,27 @@
+// HObjectList.cpp: implementation of the HObjectList class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "HObjectList.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+HObjectList::HObjectList()
+{
+
+}
+
+HObjectList::~HObjectList()
+{
+
+}
+
+void HObjectList::Tick()
+{
+  for(iterator it=begin(); it!=end(); it++)
+  {
+	(*it)->Tick();
+  }
+}

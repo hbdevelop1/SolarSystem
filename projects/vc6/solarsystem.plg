@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: solarsystem - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\TEMP\LOCALS~1\Temp\RSP4E.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\utilities" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D DataPath=\"..\\..\\data\" /D DataPath1=\"data\" /FR"Debug/" /Fp"Debug/solarsystem.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\hassan\devs\solarsystemR\trunk\Engine\Camera.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\TEMP\LOCALS~1\Temp\RSP4E.tmp" 
+Creating temporary file "C:\DOCUME~1\TEMP\LOCALS~1\Temp\RSP4F.tmp" with contents
+[
+expat.lib opengl32.lib glu32.lib glaux.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/solarsystem.pdb" /debug /machine:I386 /out:"Debug/solarsystem.exe" /pdbtype:sept /libpath:"..\..\utilities\GL" /libpath:"..\..\utilities\xml" 
+.\Debug\HMatrix.obj
+.\Debug\HQuaternion.obj
+.\Debug\HVector.obj
+.\Debug\HVector4.obj
+.\Debug\An8BooleanKey.obj
+.\Debug\An8Controller.obj
+.\Debug\An8Element.obj
+.\Debug\An8File.obj
+.\Debug\An8FloatKey.obj
+.\Debug\An8ObjectElement.obj
+.\Debug\An8PointKey.obj
+.\Debug\An8QKey.obj
+.\Debug\An8Scene.obj
+.\Debug\An8Track.obj
+.\Debug\AN8X.obj
+.\Debug\AN8X_Math.obj
+.\Debug\AN8XMath_Quaternion.obj
+.\Debug\HAnimation.obj
+.\Debug\xml.obj
+.\Debug\HButton.obj
+.\Debug\Camera.obj
+.\Debug\HEvent.obj
+.\Debug\HGraphicObj.obj
+.\Debug\HObject.obj
+.\Debug\HObjectList.obj
+.\Debug\HRendererState.obj
+.\Debug\HTexture.obj
+.\Debug\Menu.obj
+.\Debug\Root.obj
+.\Debug\Scene.obj
+.\Debug\Sun.obj
+.\Debug\solarsystem.obj
+.\Debug\Testing.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\TEMP\LOCALS~1\Temp\RSP4F.tmp"
+<h3>Output Window</h3>
+Compiling...
+Camera.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+solarsystem.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
