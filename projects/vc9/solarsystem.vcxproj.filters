@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{982caf83-43e0-4043-9a96-baafbf6d7e9a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{2ab73e95-b232-4682-86c9-00120d47c69d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\math">
+      <UniqueIdentifier>{3a6e4ede-e9e7-45fc-a157-03c1122180a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\anim">
+      <UniqueIdentifier>{296dd96d-7096-41a6-be29-41c9b6a6eaaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\anim\liban8">
+      <UniqueIdentifier>{6c494bd3-8cec-4fcc-b60a-90ea87ba49fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\xml">
+      <UniqueIdentifier>{f75f9a2d-0b54-478e-83b9-de86431231ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{ee0217f1-38ca-4c62-8e8f-4c8248daa637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Globals">
+      <UniqueIdentifier>{f79b1522-676d-463e-8fc9-ef5ef0c2bcfa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Engine\HButton.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HGraphicObj.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HObject.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HObjectList.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HTexture.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\math\HMatrix.cpp">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\math\HQuaternion.cpp">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\math\HVector.cpp">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\HAnimation.cpp">
+      <Filter>Source Files\Engine\anim</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8BooleanKey.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8Controller.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8Element.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8File.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8FloatKey.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8ObjectElement.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8PointKey.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8QKey.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8Scene.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\An8Track.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\AN8X.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\AN8X_Math.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\anim\liban8\AN8XMath_Quaternion.cpp">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\xml\xml.cpp">
+      <Filter>Source Files\Engine\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\solarsystem.cpp">
+      <Filter>Source Files\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Testing.cpp">
+      <Filter>Source Files\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Camera.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Menu.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Root.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Scene.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HEvent.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\HRendererState.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Earth.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Sun.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\math\HVector4.cpp">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Engine\HButton.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HEvent.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HGraphicObj.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HObject.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HObjectList.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HTexture.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\math\HCommon.h">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\math\HMatrix.h">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\math\HQuaternion.h">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\math\HVector.h">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\anim\HAnimation.h">
+      <Filter>Source Files\Engine\anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\anim\liban8\An8Loader.h">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\anim\liban8\AN8X.h">
+      <Filter>Source Files\Engine\anim\liban8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\xml\xml.h">
+      <Filter>Source Files\Engine\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Testing.h">
+      <Filter>Source Files\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Camera.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Menu.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Root.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Scene.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\HRendererState.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Earth.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Sun.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\math\HVector4.h">
+      <Filter>Source Files\Engine\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

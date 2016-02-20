@@ -1,0 +1,50 @@
+header {
+  version { "0.95" }
+  build { "2007.04.02" }
+}
+environment {
+  grid { 1 10 50 50 }
+  framerate { 24 }
+}
+object { "object01"
+  cube {
+    name { "cube01" }
+    base {
+      origin { (0 21.573 0) }
+    }
+    material { " -- default --" }
+    scale { 52.135 43.146 52.135 }
+    divisions { 1 1 1 }
+  }
+}
+scene { "scene01"
+  frames { 72 }
+  groundgrid { 1 }
+  shadowbias { 0.00100 }
+  background { 153 153 153 }
+  camera { "camera01"
+    loc { (150 100 200) }
+    orientation { (-0.04877 0.93733 -0.14632 -0.31244) }
+    fov { 60 }
+    number { 1 } 
+  }
+  objectelement { "eobject01" "object01"
+    loc { (0 0 -3) }
+    orientation { (0 0 0 1) }
+    controller { "position"
+      track {
+        pointkey { 0    (25 10 0) (0 -28.165 -25.768) (0 28.165 25.768) "S" }
+        pointkey { 24   (20 10 0) (0 -28.165 -25.768) (0 28.165 25.768) "S" }
+        pointkey { 48 (15 10 0) (0 -28.165 -25.768) (0 28.165 25.768) "S" }
+        pointkey { 72 (10 10 0) (0 1.4981 -44.944) (0 -1.4981 44.944) "S" }
+        pointkey { 96 (5 10 0) (0 -4.1055 -34.31) (0 4.284 35.802) "S" }
+        pointkey { 120 (0 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+        pointkey { 144 (-5 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+        pointkey { 168 (-10 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+        pointkey { 192 (-15 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+        pointkey { 216 (-20 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+        pointkey { 240 (-25 10 0) (0 -39.551 -5.9925) (0 39.551 5.9925) "S" }
+      }
+    }
+  }
+}
