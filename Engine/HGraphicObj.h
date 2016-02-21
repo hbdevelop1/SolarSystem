@@ -9,11 +9,11 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "HObject.h"
 #include "math\HVector.h"
 
 #include <list>
 
+class HObject3D;
 
 
 struct stVertex
@@ -39,11 +39,12 @@ class HAnimation;
 /*
 A graphic object has a list of quads, an animation.
 */
-class HGraphicObj : public HObject  
+class HGraphicObj //: public HObject3D  
 {
 protected:
 	QuadsList	m_quads;
 	HAnimation	*m_anim;
+	bool		m_dataloaded;
 
 	struct 
 	{
@@ -53,12 +54,13 @@ protected:
 
 
 public:
-	void Tick();
-	void DrawSpecifics();
 	HGraphicObj(const char * filename);
 	virtual ~HGraphicObj();
 
-	void LoadAnimation(const char *);
+	void Tick();
+	void Draw();
+
+	void LoadAnimation(const char *, HObject3D *);
 	void SetLight(HVector pos);
 
 	friend HAnimation;

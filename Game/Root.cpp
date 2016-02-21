@@ -5,8 +5,8 @@
 #include "Root.h"
 #include "Scene.h"
 #include "Menu.h"
-#include "hevent.h"
-#include "HRendererState.h"
+//#include "..\engine\hevent.h"
+#include "..\engine\HRendererState.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -15,17 +15,17 @@
 Root::Root()
 {
 	m_scene = new Scene;
-	m_pausemenu = new Menu;
+	//m_pausemenu = new Menu;
 
-	Event::RegisterHandler(Event::event_pause,this,&Root::Pause);
+	//Event::RegisterHandler(Event::event_pause,this,&Root::Pause);
 
 }
 
 Root::~Root()
 {
-	Event::UnRegisterHandler(Event::event_pause);
+	//Event::UnRegisterHandler(Event::event_pause);
 	delete m_scene;
-	delete m_pausemenu;
+	//delete m_pausemenu;
 
 }
 
@@ -59,16 +59,17 @@ void Root::Draw()
 	int l = HRendererState::GetInstance().GetLight() ;
 	HRendererState::GetInstance().SetLight(false);
 
-	if(m_active == m_pausemenu)
-		m_pausemenu->Draw();
+	//if(m_active == m_pausemenu) 		m_pausemenu->Draw();
 
 	HRendererState::GetInstance().SetLight(l);
 }
 
 void Root::Pause(bool b)
 {
+	return;
+
 	if(b)
-		m_active = m_pausemenu;
+		m_active = NULL;//m_pausemenu;
 	else
 		m_active = m_scene;
 }

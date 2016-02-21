@@ -7,20 +7,19 @@
 		lightsource="1"
 		parent=""/>
 
-<actor type="HGraphicObj" name="earth01"
-	    position="0 0 -1"
-	    orientation="0 0 0 1"
-		datafile="earth_tex"
-		animationfile="earth_anim.an8"
-		lightsource="0"
-		parent="sun01"/>
+	<actor type="SpaceObject" name="earth01"
+			position="0 0 -1"
+			orientation="0 0 0 1"
+			datafile="earth_tex"
+			animationfile="earth_anim.an8"
+			lightsource="0"
+			parent="sun01"/>
 
-<actor type="HGraphicObj" name="moon01"
-	    position="0 0 0"
-	    orientation="0 0 0 1"
-		datafile="moon_tex"
-		animationfile="moon_anim.an8"
-		lightsource="0"
-		parent="earth01"/>
-		
+	<actor type="SpaceObject" name="moon01"
+			position="0 0 0"
+			orientation="0 0 0 1"
+			datafile="moon_tex"
+			animationfile="moon_anim.an8"
+			lightsource="0"
+			parent="earth01"/>
 </root>

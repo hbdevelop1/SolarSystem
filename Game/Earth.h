@@ -9,9 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "..\ENGINE\HGraphicObj.h"
+#include "SpaceObject.h"
+#include "..\ENGINE\MATH\HQuaternion.h"	// Added by ClassView
 
-class Earth : public HGraphicObj  
+class Earth : public SpaceObject  
 {
 private:
 
@@ -25,10 +26,7 @@ private:
 
 public:
 	Earth(char * filename);
-	virtual ~Earth();
-
-	void Init();
-	void Tick();
+	~Earth();
 };
 
 #endif // !defined(AFX_EARTH_H__2DB1EC2E_7090_4C35_B891_F82ED4A8AED5__INCLUDED_)

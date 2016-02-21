@@ -14,12 +14,12 @@
 #include <time.h>
 #include "..\MATH\HQuaternion.h"	// Added by ClassView
 
-class HGraphicObj;
+class HObject3D;
 
 class HAnimation  
 {
 private:
-	HGraphicObj *m_go;	//the owner object of this animation. used to set it's orientation and position after animation playing
+	HObject3D*	m_3dObj;	//the owner object of this animation. used to set it's orientation and position after animation playing
 	An8Element  m_elt;	
 
 //animation data structure.
@@ -59,7 +59,7 @@ private:
 	bool									m_loop;
 
 public:
-	HAnimation(HGraphicObj * go, An8Element & e);
+	HAnimation(HObject3D * go, An8Element & e);
 	virtual ~HAnimation();
 
 	void Update(void);

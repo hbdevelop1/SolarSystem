@@ -22,7 +22,6 @@
 #include <algorithm>
 #include <boost/mem_fn.hpp>
 #include "htexture.h"
-#include "Scene.h"
 #include "HRendererState.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -33,7 +32,7 @@
 at the creation of the graphic object, load its corresponding data.
 data = {goemetry,texture, animation, ...}
 */
-HGraphicObj::HGraphicObj(const char * filename):m_anim(NULL)
+HGraphicObj::HGraphicObj(const char * filename):m_anim(NULL), m_dataloaded(false)
 {
   /*
   create a file reader object;
@@ -44,6 +43,10 @@ HGraphicObj::HGraphicObj(const char * filename):m_anim(NULL)
 	s+=filename;
 
 	std::ifstream file(s.c_str());
+	
+	if(!file.good())
+		return;
+
 
 	int nbrOfQuads;
 	file >> nbrOfQuads;
@@ -95,6 +98,7 @@ HGraphicObj::HGraphicObj(const char * filename):m_anim(NULL)
 
 	file.close();
 
+	m_dataloaded = true;
 
 
 }
@@ -104,6 +108,8 @@ destruct and free resources
 */
 HGraphicObj::~HGraphicObj()
 {
+	if(!m_dataloaded)
+		return;
 
   	for(QuadsList::iterator it=m_quads.begin(); it!=m_quads.end(); it++)
 	{
@@ -148,8 +154,11 @@ void HGraphicObj::Draw()
 Load animation function.
 called at the creation time of the object
 */
-void HGraphicObj::LoadAnimation(const char *filename)
+void HGraphicObj::LoadAnimation(const char *filename, HObject3D *obj)
 {
+	if(!m_dataloaded)
+		return;
+
 	An8File an8File;
 
 	std::string s=DataPath;
@@ -165,7 +174,7 @@ void HGraphicObj::LoadAnimation(const char *filename)
 	An8Scene &sc = *an8File.vScenes.begin();
 	An8ObjectElement &oe = *sc.vObjectElements.begin();
 
-	m_anim = new HAnimation(this, oe);
+	m_anim = new HAnimation(obj, oe);
 }
 
 /*
@@ -179,6 +188,9 @@ void HGraphicObj::Tick()
 	return;
 
   m_anim->Update();
+
+
+ // HObject::Tick();
 
 }
 
@@ -198,8 +210,11 @@ care is taken also to not pass orientation information.
 7-pop matrix
 
 */
-void HGraphicObj::DrawSpecifics()
+void HGraphicObj::Draw()
 {
+	if(!m_dataloaded)
+		return;
+
 	if(m_texture.present)
 	{
 		glEnable(GL_TEXTURE_2D);							
@@ -245,5 +260,7 @@ void HGraphicObj::DrawSpecifics()
 		glDisable(GL_TEXTURE_2D);							
 	}
 
+
+	// HObject::Draw(); //this should be here for instances of HGraphicObj. but not for derived classes from HGraphicObj
 
 }

@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "..\ENGINE\HGraphicObj.h"
+#include "SpaceObject.h"
 
 
 /*
@@ -20,13 +20,13 @@ struct stLight
 	float		ambient[4];
 };
 */
-class Sun : public HGraphicObj  
+class Sun : public SpaceObject  
 {
 //	stLight			*m_light;
 
 public:
 	Sun(const char * filename);
-	virtual ~Sun();
+	~Sun();
 
 
 	void DrawSpecifics();

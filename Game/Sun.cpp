@@ -20,7 +20,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Sun::Sun(const char * filename):HGraphicObj(filename)
+Sun::Sun(const char * filename):SpaceObject(filename)
 //,m_light(NULL)
 {
 
@@ -125,3 +125,4 @@ void Sun::DrawSpecifics()
 	}
 
 }
+

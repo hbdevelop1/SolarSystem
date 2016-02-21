@@ -28,11 +28,11 @@ GLfloat	rquad;				// Angle For The Quad ( NEW )
 
 static BOOL	g_done=FALSE;
 
-#include "engine\Root.h"
+#include "game\Root.h"
 
 #include "Testing.h"
 
-#include "engine\hevent.h"
+//#include "engine\hevent.h"
 #include "engine\HRendererState.h"
 #include "engine\math\HCommon.h"
 
@@ -86,7 +86,7 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	g_Root = new Root;
 	g_Root->Init();
 
-	Event::RegisterHandler(Event::event_quit,EndGame);
+	//Event::RegisterHandler(Event::event_quit,EndGame);
 
 	return TRUE;										// Initialization Went OK
 }
@@ -113,7 +113,7 @@ int RunFrame()
 GLvoid KillGLWindow(GLvoid)								// Properly Kill The Window
 {
 	delete g_Root ;
-	Event::UnRegisterHandler(Event::event_quit);
+	//Event::UnRegisterHandler(Event::event_quit);
 
 	if (hRC)											// Do We Have A Rendering Context?
 	{
@@ -340,9 +340,11 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,			// Handle For This Window
 
 		case WM_LBUTTONDOWN:
 			{
+				/*
 				Event::Handle(Event::event_click, 
 					LOWORD(lParam),
 					HIWORD(lParam));
+					*/
 			}
 		break;
 	}
@@ -394,7 +396,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 				if(keys[VK_ESCAPE])	
 				{
 					keys[VK_ESCAPE]=FALSE;
-					Event::Handle(Event::event_pause, true);
+					//Event::Handle(Event::event_pause, true);
 				}
 			}
 

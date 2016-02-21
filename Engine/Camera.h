@@ -9,10 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "..\ENGINE\HObject.h"
-#include "..\ENGINE\MATH\HVector.h"	// Added by ClassView
+#include "HObject3D.h"
+#include "MATH\HVector.h"	// Added by ClassView
 
-class Camera : public HObject  
+class Camera : public HObject3D
 {
 public:
 	Camera();

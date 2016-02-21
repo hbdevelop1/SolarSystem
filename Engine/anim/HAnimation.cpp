@@ -6,7 +6,7 @@
 
 #include "HAnimation.h"
 #include <iterator>
-#include "../HGraphicObj.h"
+#include "../HObject3D.h"
 #include <windows.h>
 #include <assert.h>
 
@@ -65,7 +65,7 @@ double HAnimation::ms_TimeToPlayNewFrame=CLOCKS_PER_SEC/100.0;
 /*
 At animation creation, load information about its keyframe positions and keyframe orientations.
 */
-HAnimation::HAnimation(HGraphicObj * go, An8Element & e):m_go(go),m_loop(true)
+HAnimation::HAnimation(HObject3D * obj, An8Element & e):m_3dObj(obj),m_loop(true)
 {
 
 	m_elt.Loc=e.Loc;         
@@ -75,8 +75,8 @@ HAnimation::HAnimation(HGraphicObj * go, An8Element & e):m_go(go),m_loop(true)
 	
 
 
-	m_go->SetPosition(m_elt.Loc);
-	m_go->SetOrientation(m_elt.Orientation);
+	m_3dObj->SetPosition(m_elt.Loc);
+	m_3dObj->SetOrientation(m_elt.Orientation);
 
 
 	An8Track *Track;
@@ -135,7 +135,7 @@ void HAnimation::Update()
 		HQuaternion orientation = Interpolate( (*m_Rot.currentkeyframe).Quaternion,
 										  (*m_Rot.nextkeyframe).Quaternion,
 										  m_Rot.CurrentFrameTimeStep);
-		m_go->SetOrientation(orientation);
+		m_3dObj->SetOrientation(orientation);
 #if 0
 		{
 		char buf[100];
@@ -174,7 +174,7 @@ void HAnimation::Update()
 		HVector loc = Interpolate( (*m_Disp.currentkeyframe).Value,
 										  (*m_Disp.nextkeyframe).Value,
 								m_Disp.CurrentFrameTimeStep);
-		m_go->SetPosition(loc);
+		m_3dObj->SetPosition(loc);
 
 
 

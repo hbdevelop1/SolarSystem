@@ -9,31 +9,24 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "HObject.h"
-#include "HGraphicObj.h"
+#include "..\engine\HObject.h"
+#include "..\engine\HGraphicObj.h"
 #include <list>
-#include "Camera.h"	// Added by ClassView
-
-typedef std::list<HGraphicObj*> GraphicsList;
+#include "..\engine\Camera.h"	// Added by ClassView
 
 
 class Scene : public HObject  
 {
 private:
 	Camera			m_camera;
-	GraphicsList	m_objects;
-  //list and not deque or vector, in order to insert at any location in the collection. for objects that depend on others.
 
-
-	static HGraphicObj* ms_lightobj; //the object emiting light (the sun)
+	static HObject* ms_lightobj; //the object emiting light (the sun)
 
 public:
 
 	Scene();
-	virtual ~Scene();
+	~Scene();
 
-	void Tick();
-	void Init();
 	void Draw();
 
 	static bool IsLit() {return (ms_lightobj!=NULL);}

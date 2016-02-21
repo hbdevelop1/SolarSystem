@@ -146,13 +146,9 @@ copy $(TargetPath) ..\..\EXE;;</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Engine\Camera.cpp" />
-    <ClCompile Include="..\..\Engine\HButton.cpp" />
-    <ClCompile Include="..\..\Engine\HEvent.cpp" />
+    <ClCompile Include="..\..\Engine\HObject3D.cpp" />
     <ClCompile Include="..\..\Engine\HRendererState.cpp" />
     <ClCompile Include="..\..\Engine\math\HVector4.cpp" />
-    <ClCompile Include="..\..\Engine\Menu.cpp" />
-    <ClCompile Include="..\..\Engine\Root.cpp" />
-    <ClCompile Include="..\..\Engine\Scene.cpp" />
     <ClCompile Include="..\..\Engine\HGraphicObj.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -260,6 +256,10 @@ copy $(TargetPath) ..\..\EXE;;</Command>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="..\..\Game\Earth.cpp" />
+    <ClCompile Include="..\..\Game\HEvent.cpp" />
+    <ClCompile Include="..\..\Game\Root.cpp" />
+    <ClCompile Include="..\..\Game\Scene.cpp" />
+    <ClCompile Include="..\..\Game\SpaceObject.cpp" />
     <ClCompile Include="..\..\Game\Sun.cpp" />
     <ClCompile Include="..\..\solarsystem.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -274,10 +274,9 @@ copy $(TargetPath) ..\..\EXE;;</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Engine\Camera.h" />
-    <ClInclude Include="..\..\Engine\HButton.h" />
-    <ClInclude Include="..\..\Engine\HEvent.h" />
     <ClInclude Include="..\..\Engine\HGraphicObj.h" />
     <ClInclude Include="..\..\Engine\HObject.h" />
+    <ClInclude Include="..\..\Engine\HObject3D.h" />
     <ClInclude Include="..\..\Engine\HObjectList.h" />
     <ClInclude Include="..\..\Engine\HRendererState.h" />
     <ClInclude Include="..\..\Engine\HTexture.h" />
@@ -289,11 +288,12 @@ copy $(TargetPath) ..\..\EXE;;</Command>
     <ClInclude Include="..\..\Engine\anim\liban8\An8Loader.h" />
     <ClInclude Include="..\..\Engine\anim\liban8\AN8X.h" />
     <ClInclude Include="..\..\Engine\math\HVector4.h" />
-    <ClInclude Include="..\..\Engine\Menu.h" />
-    <ClInclude Include="..\..\Engine\Root.h" />
-    <ClInclude Include="..\..\Engine\Scene.h" />
     <ClInclude Include="..\..\Engine\xml\xml.h" />
     <ClInclude Include="..\..\Game\Earth.h" />
+    <ClInclude Include="..\..\Game\HEvent.h" />
+    <ClInclude Include="..\..\Game\Root.h" />
+    <ClInclude Include="..\..\Game\Scene.h" />
+    <ClInclude Include="..\..\Game\SpaceObject.h" />
     <ClInclude Include="..\..\Game\Sun.h" />
     <ClInclude Include="..\..\Testing.h" />
   </ItemGroup>

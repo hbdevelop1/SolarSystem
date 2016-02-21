@@ -13,7 +13,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Earth::Earth(char * filename):HGraphicObj(filename)
+Earth::Earth(char * filename):SpaceObject(filename)
 {
   m_q0.Set(0,HVector(0,1,0));		  m_q0.Print();
   m_q1.Set(M_PI/2,HVector(0,1,0));	  m_q1.Print();
@@ -26,7 +26,7 @@ Earth::~Earth()
 {
 
 }
-
+#if 0
 void Earth::Tick()
 {
   
@@ -82,10 +82,4 @@ void Earth::Tick()
 #endif
 
 }
-
-void Earth::Init()
-{
-  //SetPosition(HVector(0, 0, -15));
-
-}
-
+#endif

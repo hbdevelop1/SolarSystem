@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "HObject.h"
+#include "..\engine\HObject.h"
 
 class Scene;
 class Menu;
@@ -28,7 +28,7 @@ public:
 	void Draw();
 
 private:
-	Menu		*m_pausemenu;//the pause menu
+	//Menu		*m_pausemenu;//the pause menu
 	Scene		*m_scene;	//the scene that contains the planets
 	HObject		*m_active;	//which of the scene or menu is currently active.
 };
